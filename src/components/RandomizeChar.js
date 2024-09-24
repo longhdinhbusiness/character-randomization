@@ -26,12 +26,12 @@ function RandomizeChar() {
     body: bodyImages[generateRandomNumber(bodyImages.length)],
     hair: hairImages[generateRandomNumber(hairImages.length)],
     eyes: eyesImages[generateRandomNumber(eyesImages.length)],
-    facialHair: facialHairImages[generateRandomNumber(facialHairImages.length)],
+    facialhair: facialHairImages[generateRandomNumber(facialHairImages.length)],
     eyebrows: eyeBrowsImages[generateRandomNumber(eyeBrowsImages.length)],
-    mouth: mouthsImages[generateRandomNumber(mouthsImages.length)],
+    mouths: mouthsImages[generateRandomNumber(mouthsImages.length)],
     earrings: earringsImages[generateRandomNumber(earringsImages.length)],
     glasses: glassesImages[generateRandomNumber(glassesImages.length)],
-    hat: hatsImages[generateRandomNumber(hatsImages.length)],
+    hats: hatsImages[generateRandomNumber(hatsImages.length)],
     neckwear: neckwearImages[generateRandomNumber(neckwearImages.length)],
     layer1: layer1Images[generateRandomNumber(layer1Images.length)],
     layer2: layer2Images[generateRandomNumber(layer2Images.length)],
@@ -43,13 +43,13 @@ function RandomizeChar() {
       body: bodyImages[generateRandomNumber(bodyImages.length)],
       hair: hairImages[generateRandomNumber(hairImages.length)],
       eyes: eyesImages[generateRandomNumber(eyesImages.length)],
-      facialHair:
+      facialhair:
         facialHairImages[generateRandomNumber(facialHairImages.length)],
       eyebrows: eyeBrowsImages[generateRandomNumber(eyeBrowsImages.length)],
-      mouth: mouthsImages[generateRandomNumber(mouthsImages.length)],
+      mouths: mouthsImages[generateRandomNumber(mouthsImages.length)],
       earrings: earringsImages[generateRandomNumber(earringsImages.length)],
       glasses: glassesImages[generateRandomNumber(glassesImages.length)],
-      hat: hatsImages[generateRandomNumber(hatsImages.length)],
+      hats: hatsImages[generateRandomNumber(hatsImages.length)],
       neckwear: neckwearImages[generateRandomNumber(neckwearImages.length)],
       layer1: layer1Images[generateRandomNumber(layer1Images.length)],
       layer2: layer2Images[generateRandomNumber(layer2Images.length)],
@@ -72,12 +72,12 @@ function RandomizeChar() {
           <ImgElement src={randomImages.body} name="body" />
           <ImgElement src={randomImages.hair} name="hair" />
           <ImgElement src={randomImages.eyes} name="eyes" />
-          <ImgElement src={randomImages.facialHair} name="facialhair" />
+          <ImgElement src={randomImages.facialhair} name="facialhair" />
           <ImgElement src={randomImages.eyebrows} name="eyebrows" />
-          <ImgElement src={randomImages.mouth} name="mouths" />
+          <ImgElement src={randomImages.mouths} name="mouths" />
           <ImgElement src={randomImages.earrings} name="earrings" />
           <ImgElement src={randomImages.glasses} name="glasses" />
-          <ImgElement src={randomImages.hat} name="hats" />
+          <ImgElement src={randomImages.hats} name="hats" />
           <ImgElement src={randomImages.neckwear} name="neckwear" />
           <ImgElement src={randomImages.layer1} name="layer1" />
           <ImgElement src={randomImages.layer2} name="layer2" />
