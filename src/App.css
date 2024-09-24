@@ -162,7 +162,7 @@ img[src=''] {
 .hair {
   z-index: 0;
 }
-.hat {
+.hats {
   z-index: 1;
 }
 
@@ -178,6 +178,36 @@ img[src=''] {
   z-index: 2;
 }
 
-.nose {
+.noses {
   z-index: 1;
+}
+
+.facialhair {
+  z-index: 2;
+}
+
+.active {
+  background-color: rgba(255, 217, 0, 0.384);
+  border: 2px solid goldenrod;
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    position: relative;
+  }
+  .main-card_wrapper {
+    position: fixed;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    width: 300px;
+  }
+  .main_button-container {
+    position: absolute;
+    left: 45%;
+    right: 2%;
+    top: 30%;
+    transform: translateY(2%);
+  }
 }

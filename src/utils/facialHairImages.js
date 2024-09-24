@@ -7,7 +7,7 @@ function importAll(r) {
 }
 
 const facialHairImages = importAll(
-  require.context('../images/character/eyes', false, /\.(png|jpe?g|svg)$/)
+  require.context('../images/character/facialhair', false, /\.(png|jpe?g|svg)$/)
 );
 
 export default facialHairImages;

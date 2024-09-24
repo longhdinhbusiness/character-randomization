@@ -1,16 +1,14 @@
 import React from 'react';
 import Heading from './components/Heading';
-import MainCard from './components/MainCard';
 import './App.css';
-import MainButtonsCard from './components/MainButtonsCard';
+import RandomizeChar from './components/RandomizeChar';
 
 function App() {
   return (
     <>
       <div className="container">
         <Heading />
-        <MainCard />
-        <MainButtonsCard />
+        <RandomizeChar />
       </div>
     </>
   );
