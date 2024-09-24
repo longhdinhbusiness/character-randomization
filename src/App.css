@@ -201,7 +201,6 @@ img[src=''] {
     top: 50%;
     transform: translateY(-50%);
     z-index: 999;
-    width: 300px;
   }
   .main_button-container {
     position: absolute;
