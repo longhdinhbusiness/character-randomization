@@ -1,9 +1,7 @@
 import React from 'react';
 
-function ImgElement(props) {
-  return (
-    <img className={`image ${props.name}`} src={props.src} alt={props.name} />
-  );
+function ImgElement({ name, src }) {
+  return <img className={`image ${name}`} src={src} alt={name} />;
 }
 
 export default ImgElement;

@@ -1,32 +1,24 @@
 import React, { useState } from 'react';
 import ImgContainer from './ImgContainer';
-import bodyImages from '../utils/bodyImages';
-import hairImages from '../utils/hairImages';
-import eyesImages from '../utils/eyesImages';
-import facialHairImages from '../utils/facialHairImages';
-import eyeBrowsImages from '../utils/eyebrowsImages';
-import mouthsImages from '../utils/mouthsImages';
-import earringsImages from '../utils/earringsImages';
-import glassesImages from '../utils/glassesImages';
-import hatsImages from '../utils/hatsImages';
-import neckwearImages from '../utils/neckwearImages';
-import layer1Images from '../utils/layer1Images';
-import layer2Images from '../utils/layer2Images';
-import layer3Images from '../utils/layer3Images';
+
+const categories = [
+  'earrings', // 0
+  'glasses', // 1
+  'hats', // 2
+  'neckwear', // 3
+  'body', // 4
+  'layer1', // 5
+  'layer2', // 6
+  'layer3', // 7
+  'eyebrows', // 8
+  'eyes', // 9
+  'facialhair', // 10
+  'hair', // 11
+  'mouths', // 12
+  'noses', // 13
+];
 
 function MainButtons({ updateImage }) {
-  const imgValues = [
-    { accessories: ['earrings', 'glasses', 'hats', 'neckwear'] },
-    'body',
-    { clothes: ['layer1', 'layer2', 'layer3'] },
-    'eyebrows',
-    'eyes',
-    'facialhair',
-    'hair',
-    'mouths',
-    'noses',
-  ];
-
   const [selectedImages, setSelectedImages] = useState({
     body: null,
     hair: null,
@@ -43,88 +35,88 @@ function MainButtons({ updateImage }) {
     layer3: null,
   });
 
-  function handleSelectImage(category, img) {
+  const handleSelectImage = (category, img) => {
     setSelectedImages((prev) => ({ ...prev, [category]: img }));
     updateImage(category, img);
-  }
+  };
 
   return (
     <div className="main_button-container">
       <ImgContainer
-        customPart={imgValues[6]}
-        images={hairImages}
+        customPart={categories[11]}
+        imagePath={'images/character/hair/'}
         handleClick={(img) => handleSelectImage('hair', img)}
         selectedImage={selectedImages.hair}
       />
       <ImgContainer
-        customPart={imgValues[3]}
-        images={eyeBrowsImages}
+        customPart={categories[8]}
+        imagePath={'images/character/eyebrows/'}
         handleClick={(img) => handleSelectImage('eyebrows', img)}
         selectedImage={selectedImages.eyebrows}
       />
       <ImgContainer
-        customPart={imgValues[4]}
-        images={eyesImages}
+        customPart={categories[9]}
+        imagePath={'images/character/eyes/'}
         handleClick={(img) => handleSelectImage('eyes', img)}
         selectedImage={selectedImages.eyes}
       />
       <ImgContainer
-        customPart={imgValues[7]}
-        images={mouthsImages}
+        customPart={categories[12]}
+        imagePath={'images/character/mouths/'}
         handleClick={(img) => handleSelectImage('mouths', img)}
         selectedImage={selectedImages.mouths}
       />
       <ImgContainer
-        customPart={imgValues[5]}
-        images={facialHairImages}
+        customPart={categories[10]}
+        imagePath={'images/character/facialhair/'}
         handleClick={(img) => handleSelectImage('facialhair', img)}
         selectedImage={selectedImages.facialhair}
       />
       <ImgContainer
-        customPart={imgValues[1]}
-        images={bodyImages}
+        customPart={categories[4]}
+        imagePath={'images/character/body/'}
         handleClick={(img) => handleSelectImage('body', img)}
         selectedImage={selectedImages.body}
       />
       <ImgContainer
-        customPart={imgValues[0].accessories[0]}
-        images={earringsImages}
+        customPart={categories[0]}
+        imagePath={'images/character/accessories/earrings/'}
         handleClick={(img) => handleSelectImage('earrings', img)}
         selectedImage={selectedImages.earrings}
       />
       <ImgContainer
-        customPart={imgValues[0].accessories[1]}
-        images={glassesImages}
+        customPart={categories[1]}
+        imagePath={'images/character/accessories/glasses/'}
         handleClick={(img) => handleSelectImage('glasses', img)}
         selectedImage={selectedImages.glasses}
       />
       <ImgContainer
-        customPart={imgValues[0].accessories[2]}
-        images={hatsImages}
+        customPart={categories[2]}
+        imagePath={'images/character/accessories/hats/'}
         handleClick={(img) => handleSelectImage('hats', img)}
         selectedImage={selectedImages.hats}
       />
       <ImgContainer
-        customPart={imgValues[0].accessories[3]}
-        images={neckwearImages}
+        customPart={categories[3]}
+        imagePath={'images/character/accessories/neckwear/'}
         handleClick={(img) => handleSelectImage('neckwear', img)}
         selectedImage={selectedImages.neckwear}
       />
       <ImgContainer
-        customPart={imgValues[2].clothes[0]}
-        images={layer1Images}
+        customPart={categories[5]}
+        imagePath={'images/character/clothes/layer1/'}
         handleClick={(img) => handleSelectImage('layer1', img)}
         selectedImage={selectedImages.layer1}
       />
       <ImgContainer
-        customPart={imgValues[2].clothes[1]}
-        images={layer2Images}
+        customPart={categories[6]}
+        imagePath={'images/character/clothes/layer2/'}
         handleClick={(img) => handleSelectImage('layer2', img)}
         selectedImage={selectedImages.layer2}
       />
       <ImgContainer
-        customPart={imgValues[2].clothes[2]}
-        images={layer3Images}
+        customPart={categories[7]}
+        imagePath={'images/character/clothes/layer3/'}
         handleClick={(img) => handleSelectImage('layer3', img)}
         selectedImage={selectedImages.layer3}
       />

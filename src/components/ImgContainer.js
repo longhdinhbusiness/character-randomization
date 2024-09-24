@@ -1,11 +1,22 @@
 import React from 'react';
+import { totalImagesLength } from '../constant';
 
-function ImgContainer({ customPart, images, handleClick, selectedImage }) {
+function ImgContainer({ customPart, imagePath, handleClick, selectedImage }) {
+  const imgArray = [];
+
+  const createImages = () => {
+    for (let i = 1; i <= totalImagesLength[customPart]; i++) {
+      imgArray.push(`${imagePath}${i}.png`);
+    }
+  };
+
+  createImages();
+
   return (
     <div className="button_container">
       <h2 className="h2">{customPart.toUpperCase()}</h2>
       <div className={`${customPart}-wrapper buttons_wrapper`}>
-        {images.map((img, index) => (
+        {imgArray.map((img, index) => (
           <button
             key={`${customPart}${index}`}
             onClick={() => handleClick(img)}

@@ -1,68 +1,36 @@
 import React, { useState } from 'react';
-import bodyImages from '../utils/bodyImages';
-import hairImages from '../utils/hairImages';
-import eyesImages from '../utils/eyesImages';
-import facialHairImages from '../utils/facialHairImages';
-import eyeBrowsImages from '../utils/eyebrowsImages';
-import mouthsImages from '../utils/mouthsImages';
-import earringsImages from '../utils/earringsImages';
-import glassesImages from '../utils/glassesImages';
-import hatsImages from '../utils/hatsImages';
-import neckwearImages from '../utils/neckwearImages';
-import layer1Images from '../utils/layer1Images';
-import layer2Images from '../utils/layer2Images';
-import layer3Images from '../utils/layer3Images';
 import ImgElement from './ImgElement';
 import noseImg from '../images/character/noses/1.png';
 import RandomButton from './RandomButton';
 import MainButtons from './MainButtonsCard';
 
+const generateRandomNumber = (imgLength) =>
+  Math.floor(Math.random() * imgLength) + 1;
+
+const randomizeAvatar = () => ({
+  body: `images/character/body/${generateRandomNumber(17)}.png`,
+  hair: `images/character/hair/${generateRandomNumber(73)}.png`,
+  eyes: `images/character/eyes/${generateRandomNumber(24)}.png`,
+  facialhair: `images/character/facialhair/${generateRandomNumber(17)}.png`,
+  eyebrows: `images/character/eyebrows/${generateRandomNumber(15)}.png`,
+  mouths: `images/character/mouths/${generateRandomNumber(24)}.png`,
+  earrings: `images/character/accessories/earrings/${generateRandomNumber(
+    32
+  )}.png`,
+  glasses: `images/character/accessories/glasses/${generateRandomNumber(
+    17
+  )}.png`,
+  hats: `images/character/accessories/hats/${generateRandomNumber(28)}.png`,
+  neckwear: `images/character/accessories/neckwear/${generateRandomNumber(
+    18
+  )}.png`,
+  layer1: `images/character/clothes/layer1/${generateRandomNumber(5)}.png`,
+  layer2: `images/character/clothes/layer2/${generateRandomNumber(5)}.png`,
+  layer3: `images/character/clothes/layer3/${generateRandomNumber(9)}.png`,
+});
+
 function RandomizeChar() {
-  function generateRandomNumber(imgLength) {
-    return Math.floor(Math.random() * imgLength);
-  }
-
-  const [randomImages, setRandomImages] = useState({
-    body: bodyImages[generateRandomNumber(bodyImages.length)],
-    hair: hairImages[generateRandomNumber(hairImages.length)],
-    eyes: eyesImages[generateRandomNumber(eyesImages.length)],
-    facialhair: facialHairImages[generateRandomNumber(facialHairImages.length)],
-    eyebrows: eyeBrowsImages[generateRandomNumber(eyeBrowsImages.length)],
-    mouths: mouthsImages[generateRandomNumber(mouthsImages.length)],
-    earrings: earringsImages[generateRandomNumber(earringsImages.length)],
-    glasses: glassesImages[generateRandomNumber(glassesImages.length)],
-    hats: hatsImages[generateRandomNumber(hatsImages.length)],
-    neckwear: neckwearImages[generateRandomNumber(neckwearImages.length)],
-    layer1: layer1Images[generateRandomNumber(layer1Images.length)],
-    layer2: layer2Images[generateRandomNumber(layer2Images.length)],
-    layer3: layer3Images[generateRandomNumber(layer3Images.length)],
-  });
-
-  function handleClick() {
-    setRandomImages({
-      body: bodyImages[generateRandomNumber(bodyImages.length)],
-      hair: hairImages[generateRandomNumber(hairImages.length)],
-      eyes: eyesImages[generateRandomNumber(eyesImages.length)],
-      facialhair:
-        facialHairImages[generateRandomNumber(facialHairImages.length)],
-      eyebrows: eyeBrowsImages[generateRandomNumber(eyeBrowsImages.length)],
-      mouths: mouthsImages[generateRandomNumber(mouthsImages.length)],
-      earrings: earringsImages[generateRandomNumber(earringsImages.length)],
-      glasses: glassesImages[generateRandomNumber(glassesImages.length)],
-      hats: hatsImages[generateRandomNumber(hatsImages.length)],
-      neckwear: neckwearImages[generateRandomNumber(neckwearImages.length)],
-      layer1: layer1Images[generateRandomNumber(layer1Images.length)],
-      layer2: layer2Images[generateRandomNumber(layer2Images.length)],
-      layer3: layer3Images[generateRandomNumber(layer3Images.length)],
-    });
-  }
-
-  function updateImage(category, img) {
-    setRandomImages((prevImages) => ({
-      ...prevImages,
-      [category]: img,
-    }));
-  }
+  const [randomImages, setRandomImages] = useState(randomizeAvatar());
 
   return (
     <>
@@ -82,10 +50,19 @@ function RandomizeChar() {
           <ImgElement src={randomImages.layer1} name="layer1" />
           <ImgElement src={randomImages.layer2} name="layer2" />
           <ImgElement src={randomImages.layer3} name="layer3" />
-          <RandomButton handleClick={handleClick} />
+          <RandomButton
+            handleClick={() => setRandomImages(randomizeAvatar())}
+          />
         </div>
       </div>
-      <MainButtons updateImage={updateImage} />
+      <MainButtons
+        updateImage={(category, img) =>
+          setRandomImages((prevImages) => ({
+            ...prevImages,
+            [category]: img,
+          }))
+        }
+      />
     </>
   );
 }
