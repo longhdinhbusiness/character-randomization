@@ -195,6 +195,7 @@ img[src=''] {
   .container {
     position: relative;
   }
+
   .main-card_wrapper {
     position: fixed;
     left: 5%;
@@ -202,6 +203,7 @@ img[src=''] {
     transform: translateY(-50%);
     z-index: 999;
   }
+
   .main_button-container {
     position: absolute;
     left: 45%;
